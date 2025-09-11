@@ -8,35 +8,56 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 220 27% 4%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 25% 8%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 25% 8%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 260 100% 65%;
+    --primary-foreground: 220 27% 4%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 20% 12%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 20% 12%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 200 100% 70%;
+    --accent-foreground: 220 27% 4%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 20% 15%;
+    --input: 220 20% 15%;
+    --ring: 260 100% 65%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Portal-specific design tokens */
+    --portal-primary: 260 100% 65%;
+    --portal-secondary: 200 100% 70%;
+    --portal-glow: 280 100% 80%;
+    --portal-deep: 240 30% 8%;
+    --portal-surface: 220 25% 10%;
+    
+    /* Gradients */
+    --gradient-portal: linear-gradient(135deg, hsl(var(--portal-primary) / 0.8), hsl(var(--portal-secondary) / 0.6));
+    --gradient-hero: linear-gradient(180deg, hsl(var(--background)), hsl(var(--portal-deep)));
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(var(--portal-glow) / 0.15), transparent 70%);
+    
+    /* Shadows */
+    --shadow-portal: 0 25px 50px -12px hsl(var(--portal-primary) / 0.25);
+    --shadow-glow: 0 0 40px hsl(var(--portal-glow) / 0.3);
+    --shadow-elevation: 0 10px 30px -5px hsl(220 25% 2% / 0.5);
+
+    /* Animations */
+    --transition-portal: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-glow: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
     --sidebar-background: 0 0% 98%;
 
