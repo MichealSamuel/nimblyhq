@@ -1,5 +1,11 @@
+import { useState } from "react";
 import { HeroSection } from "@/components/HeroSection";
 import { PortalCard } from "@/components/PortalCard";
+import { Navigation } from "@/components/Navigation";
+import { AboutSection } from "@/components/AboutSection";
+import { ContactSection } from "@/components/ContactSection";
+import { Footer } from "@/components/Footer";
+import { ServiceModal } from "@/components/ServiceModal";
 import { 
   Zap, 
   Globe, 
@@ -68,12 +74,24 @@ const techServices = [
 ];
 
 const Index = () => {
+  const [selectedService, setSelectedService] = useState<typeof techServices[0] | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleServiceClick = (service: typeof techServices[0]) => {
+    setSelectedService(service);
+    setIsModalOpen(true);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-hero">
-      <HeroSection />
+      <Navigation />
+      
+      <div id="hero">
+        <HeroSection />
+      </div>
       
       {/* Services Section */}
-      <section className="relative py-20 px-6">
+      <section id="services" className="relative py-20 px-6">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16 space-y-4">
@@ -100,10 +118,7 @@ const Index = () => {
                   title={service.title}
                   description={service.description}
                   icon={service.icon}
-                  onClick={() => {
-                    // Service inquiry logic would go here
-                    console.log(`Inquiring about ${service.title} service...`);
-                  }}
+                  onClick={() => handleServiceClick(service)}
                 />
               </div>
             ))}
@@ -116,6 +131,16 @@ const Index = () => {
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-portal-secondary/5 rounded-full blur-3xl" />
         </div>
       </section>
+
+      <AboutSection />
+      <ContactSection />
+      <Footer />
+
+      <ServiceModal 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        service={selectedService}
+      />
     </div>
   );
 };
