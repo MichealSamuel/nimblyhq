@@ -9,7 +9,7 @@ export const HeroSection = () => {
       <div className="absolute inset-0">
         <img 
           src={heroImage}
-          alt="Portal gateway in deep space"
+          alt="Professional tech solutions and digital innovation"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-hero opacity-90" />
@@ -39,18 +39,18 @@ export const HeroSection = () => {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card/20 backdrop-blur-sm border border-primary/20">
             <Sparkles className="h-4 w-4 text-portal-glow" />
             <span className="text-sm font-medium text-foreground/90">
-              Welcome to the Digital Portal
+              Professional Tech Solutions
             </span>
           </div>
           
           {/* Main heading */}
           <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-foreground via-portal-glow to-portal-secondary bg-clip-text text-transparent leading-tight">
-            Portal
+            Nimbly
           </h1>
           
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Your gateway to infinite digital possibilities. Explore, connect, and transcend the boundaries of the ordinary.
+            Delivering cutting-edge technology solutions that drive business growth and digital transformation.
           </p>
           
           {/* CTA Button */}
@@ -60,7 +60,7 @@ export const HeroSection = () => {
               size="lg"
               className="font-semibold px-8 py-4 rounded-2xl text-lg transition-all duration-300 hover:scale-105 group"
             >
-              Enter Portal
+              Start Your Project
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
           </div>

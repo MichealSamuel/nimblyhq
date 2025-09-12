@@ -6,62 +6,63 @@ import {
   Database, 
   Shield, 
   Cpu, 
-  Rocket,
   Brain,
   Users,
   Cloud,
-  Settings
+  Settings,
+  Smartphone,
+  Palette
 } from "lucide-react";
 
-const portalDestinations = [
+const techServices = [
   {
-    title: "Neural Network",
-    description: "Advanced AI systems and machine learning capabilities for next-generation processing.",
-    icon: Brain,
-  },
-  {
-    title: "Cloud Nexus", 
-    description: "Infinite cloud computing resources spanning multiple dimensions and realities.",
-    icon: Cloud,
-  },
-  {
-    title: "Quantum Core",
-    description: "Harness the power of quantum computing for impossible calculations.",
-    icon: Cpu,
-  },
-  {
-    title: "Security Vault",
-    description: "Impenetrable digital fortress protecting your most valuable data assets.",
-    icon: Shield,
-  },
-  {
-    title: "Global Network",
-    description: "Connected infrastructure spanning across all known digital realms.",
+    title: "Web Development",
+    description: "Custom websites, web applications, and e-commerce platforms built with modern technologies for optimal performance and user experience.",
     icon: Globe,
   },
   {
-    title: "Data Stream",
-    description: "Real-time data processing and analytics from infinite information sources.",
+    title: "Mobile Development", 
+    description: "Native iOS and Android applications, cross-platform solutions using React Native and Flutter for maximum market reach.",
+    icon: Smartphone,
+  },
+  {
+    title: "Cloud Solutions",
+    description: "AWS and Azure cloud migration, infrastructure setup, DevOps automation, and scalable cloud architecture design.",
+    icon: Cloud,
+  },
+  {
+    title: "AI & Machine Learning",
+    description: "AI integration, chatbot development, process automation, machine learning models, and intelligent business solutions.",
+    icon: Brain,
+  },
+  {
+    title: "Cybersecurity",
+    description: "Security audits, penetration testing, compliance consulting, and comprehensive data protection strategies for your business.",
+    icon: Shield,
+  },
+  {
+    title: "Data Analytics",
+    description: "Business intelligence dashboards, data visualization, reporting systems, and analytics solutions for data-driven decisions.",
     icon: Database,
   },
   {
-    title: "Power Grid",
-    description: "Unlimited energy distribution system powering the digital multiverse.", 
+    title: "Digital Marketing",
+    description: "SEO optimization, PPC campaigns, social media automation, and digital marketing strategies that drive results.", 
     icon: Zap,
   },
   {
-    title: "Launch Pad",
-    description: "Deploy and scale your applications across dimensional boundaries.",
-    icon: Rocket,
+    title: "UI/UX Design",
+    description: "User research, design systems, prototyping, and user experience optimization for web and mobile applications.",
+    icon: Palette,
   },
   {
-    title: "Collective",
-    description: "Connect with beings and entities from across the digital cosmos.",
+    title: "Consulting & Strategy",
+    description: "Digital transformation consulting, technology audits, and strategic planning for sustainable business growth.",
     icon: Users,
   },
   {
-    title: "Control Center",
-    description: "Master control interface for managing your portal operations.",
+    title: "API Development",
+    description: "REST and GraphQL API development, system integrations, microservices architecture, and third-party API connections.",
     icon: Settings,
   }
 ];
@@ -71,24 +72,24 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-hero">
       <HeroSection />
       
-      {/* Portal Grid Section */}
+      {/* Services Section */}
       <section className="relative py-20 px-6">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16 space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-foreground to-portal-glow bg-clip-text text-transparent">
-              Portal Destinations
+              Our Services
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Choose your gateway to explore infinite digital realms and unlock unprecedented capabilities.
+              Comprehensive technology solutions designed to accelerate your business growth and digital transformation.
             </p>
           </div>
           
-          {/* Portal Cards Grid */}
+          {/* Services Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {portalDestinations.map((destination, index) => (
+            {techServices.map((service, index) => (
               <div
-                key={destination.title}
+                key={service.title}
                 className="animate-float"
                 style={{
                   animationDelay: `${index * 0.1}s`,
@@ -96,12 +97,12 @@ const Index = () => {
                 }}
               >
                 <PortalCard
-                  title={destination.title}
-                  description={destination.description}
-                  icon={destination.icon}
+                  title={service.title}
+                  description={service.description}
+                  icon={service.icon}
                   onClick={() => {
-                    // Portal navigation logic would go here
-                    console.log(`Entering ${destination.title} portal...`);
+                    // Service inquiry logic would go here
+                    console.log(`Inquiring about ${service.title} service...`);
                   }}
                 />
               </div>
