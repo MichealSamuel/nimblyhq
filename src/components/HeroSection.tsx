@@ -3,7 +3,11 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/portal-hero.jpg";
 
-export const HeroSection = () => {
+interface HeroSectionProps {
+  isWelcomeAnimation?: boolean;
+}
+
+export const HeroSection = ({ isWelcomeAnimation = false }: HeroSectionProps) => {
   const navigate = useNavigate();
 
   return (
@@ -24,11 +28,15 @@ export const HeroSection = () => {
         {Array.from({ length: 20 }).map((_, i) => (
           <div
             key={i}
-            className="absolute w-2 h-2 bg-portal-glow rounded-full opacity-20 animate-float"
+            className={`absolute w-2 h-2 bg-portal-glow rounded-full opacity-0 animate-float ${
+              isWelcomeAnimation ? 'animate-particles-fade' : 'opacity-20'
+            }`}
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 6}s`,
+              animationDelay: isWelcomeAnimation 
+                ? `${1.5 + Math.random() * 2}s` 
+                : `${Math.random() * 6}s`,
               animationDuration: `${4 + Math.random() * 4}s`,
             }}
           />
@@ -39,7 +47,12 @@ export const HeroSection = () => {
       <div className="relative z-10 text-center max-w-4xl px-6">
         <div className="space-y-8">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card/20 backdrop-blur-sm border border-primary/20">
+          <div 
+            className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card/20 backdrop-blur-sm border border-primary/20 ${
+              isWelcomeAnimation ? 'opacity-0 animate-slide-left-fade' : ''
+            }`}
+            style={{ animationDelay: '1.2s' }}
+          >
             <Sparkles className="h-4 w-4 text-portal-glow" />
             <span className="text-sm font-medium text-foreground/90">
               Professional Tech Solutions
@@ -47,21 +60,36 @@ export const HeroSection = () => {
           </div>
           
           {/* Main heading */}
-          <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-foreground via-portal-glow to-portal-secondary bg-clip-text text-transparent leading-tight">
+          <h1 
+            className={`text-6xl md:text-8xl font-bold bg-gradient-to-r from-foreground via-portal-glow to-portal-secondary bg-clip-text text-transparent leading-tight ${
+              isWelcomeAnimation ? 'opacity-0 animate-title-reveal' : ''
+            }`}
+            style={{ animationDelay: '0.5s' }}
+          >
             Nimbly
           </h1>
           
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p 
+            className={`text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed ${
+              isWelcomeAnimation ? 'opacity-0 animate-slide-right-fade' : ''
+            }`}
+            style={{ animationDelay: '1.4s' }}
+          >
             Delivering cutting-edge technology solutions that drive business growth and digital transformation.
           </p>
           
           {/* CTA Button */}
-          <div className="pt-4">
+          <div 
+            className={`pt-4 ${
+              isWelcomeAnimation ? 'opacity-0 animate-bounce-in' : ''
+            }`}
+            style={{ animationDelay: '1.8s' }}
+          >
             <Button 
               variant="portal"
               size="lg"
-              className="font-semibold px-8 py-4 rounded-2xl text-lg transition-all duration-300 hover:scale-105 group"
+              className="font-semibold px-8 py-4 rounded-2xl text-lg transition-all duration-300 hover:scale-105 group shadow-portal"
               onClick={() => navigate('/home')}
             >
               Start Your Project

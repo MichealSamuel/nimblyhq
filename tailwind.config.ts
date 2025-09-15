@@ -117,12 +117,104 @@ export default {
             transform: "translateY(-10px)",
           },
         },
+        "welcome-fade": {
+          "0%": {
+            opacity: "0",
+            background: "hsl(220 27% 4%)",
+          },
+          "100%": {
+            opacity: "1",
+            background: "var(--gradient-hero)",
+          },
+        },
+        "title-reveal": {
+          "0%": {
+            opacity: "0",
+            transform: "scale(0.8) translateY(30px)",
+            filter: "blur(10px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scale(1) translateY(0px)",
+            filter: "blur(0px)",
+          },
+        },
+        "slide-up-fade": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(40px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0px)",
+          },
+        },
+        "slide-left-fade": {
+          "0%": {
+            opacity: "0",
+            transform: "translateX(-40px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateX(0px)",
+          },
+        },
+        "slide-right-fade": {
+          "0%": {
+            opacity: "0",
+            transform: "translateX(40px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateX(0px)",
+          },
+        },
+        "bounce-in": {
+          "0%": {
+            opacity: "0",
+            transform: "scale(0.3) translateY(20px)",
+          },
+          "50%": {
+            opacity: "1",
+            transform: "scale(1.05) translateY(-5px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scale(1) translateY(0px)",
+          },
+        },
+        "particles-fade": {
+          "0%": {
+            opacity: "0",
+            transform: "scale(0.5)",
+          },
+          "100%": {
+            opacity: "0.2",
+            transform: "scale(1)",
+          },
+        },
+        "curtain-reveal": {
+          "0%": {
+            transform: "scaleY(1)",
+          },
+          "100%": {
+            transform: "scaleY(0)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "pulse-glow": "pulse-glow 3s ease-in-out infinite",
         "float": "float 6s ease-in-out infinite",
+        "welcome-fade": "welcome-fade 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards",
+        "title-reveal": "title-reveal 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards",
+        "slide-up-fade": "slide-up-fade 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards",
+        "slide-left-fade": "slide-left-fade 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards",
+        "slide-right-fade": "slide-right-fade 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards",
+        "bounce-in": "bounce-in 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards",
+        "particles-fade": "particles-fade 2s ease-out forwards",
+        "curtain-reveal": "curtain-reveal 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards",
       },
     },
   },
