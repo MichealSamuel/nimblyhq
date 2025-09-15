@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/portal-hero.jpg";
 
 export const HeroSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background image with overlay */}
@@ -59,6 +62,7 @@ export const HeroSection = () => {
               variant="portal"
               size="lg"
               className="font-semibold px-8 py-4 rounded-2xl text-lg transition-all duration-300 hover:scale-105 group"
+              onClick={() => navigate('/home')}
             >
               Start Your Project
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />

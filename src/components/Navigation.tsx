@@ -1,14 +1,29 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone, Mail } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    // If not on home page, navigate there first
+    if (location.pathname !== '/home') {
+      navigate('/home');
+      // Wait for navigation then scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
     setIsMenuOpen(false);
   };
@@ -18,7 +33,10 @@ export const Navigation = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center">
+          <div 
+            className="flex items-center cursor-pointer" 
+            onClick={() => navigate('/')}
+          >
             <h1 className="text-2xl font-bold bg-gradient-to-r from-foreground to-portal-glow bg-clip-text text-transparent">
               Nimbly
             </h1>
@@ -27,7 +45,7 @@ export const Navigation = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             <button
-              onClick={() => scrollToSection('hero')}
+              onClick={() => scrollToSection('services')}
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
               Home
@@ -50,7 +68,11 @@ export const Navigation = () => {
             >
               Contact
             </button>
-            <Button variant="portal" size="sm">
+            <Button 
+              variant="portal" 
+              size="sm"
+              onClick={() => navigate('/quote')}
+            >
               Get Quote
             </Button>
           </div>
@@ -68,7 +90,7 @@ export const Navigation = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 space-y-4">
             <button
-              onClick={() => scrollToSection('hero')}
+              onClick={() => scrollToSection('services')}
               className="block w-full text-left py-2 text-muted-foreground hover:text-foreground transition-colors"
             >
               Home
@@ -91,7 +113,12 @@ export const Navigation = () => {
             >
               Contact
             </button>
-            <Button variant="portal" size="sm" className="w-full">
+            <Button 
+              variant="portal" 
+              size="sm" 
+              className="w-full"
+              onClick={() => navigate('/quote')}
+            >
               Get Quote
             </Button>
           </div>

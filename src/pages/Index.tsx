@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { HeroSection } from "@/components/HeroSection";
 import { PortalCard } from "@/components/PortalCard";
 import { Navigation } from "@/components/Navigation";
 import { AboutSection } from "@/components/AboutSection";
@@ -83,15 +82,11 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-hero">
+    <div className="min-h-screen bg-background">
       <Navigation />
       
-      <div id="hero">
-        <HeroSection />
-      </div>
-      
       {/* Services Section */}
-      <section id="services" className="relative py-20 px-6">
+      <section id="services" className="relative py-20 px-6 mt-16">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16 space-y-4">
