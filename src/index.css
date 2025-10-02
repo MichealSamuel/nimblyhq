@@ -8,72 +8,58 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 220 27% 4%;
-    --foreground: 210 40% 98%;
-
-    --card: 220 25% 8%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 220 25% 8%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 260 100% 65%;
-    --primary-foreground: 220 27% 4%;
-
-    --secondary: 220 20% 12%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 220 20% 12%;
-    --muted-foreground: 215 20% 65%;
-
-    --accent: 200 100% 70%;
-    --accent-foreground: 220 27% 4%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 220 20% 15%;
-    --input: 220 20% 15%;
-    --ring: 260 100% 65%;
-
+    --background: 215 100% 8%;
+    --foreground: 0 0% 100%;
+    --card: 215 100% 10%;
+    --card-foreground: 0 0% 100%;
+    --popover: 215 100% 12%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 180 100% 50%;
+    --primary-foreground: 215 100% 8%;
+    --secondary: 215 100% 15%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 215 100% 20%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 180 100% 50%;
+    --accent-foreground: 215 100% 8%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 215 100% 20%;
+    --input: 215 100% 20%;
+    --ring: 180 100% 50%;
     --radius: 0.75rem;
-
-    /* Portal-specific design tokens */
-    --portal-primary: 260 100% 65%;
-    --portal-secondary: 200 100% 70%;
-    --portal-glow: 280 100% 80%;
-    --portal-deep: 240 30% 8%;
-    --portal-surface: 220 25% 10%;
+    
+    /* NimblyHQ Design Tokens */
+    --neon-cyan: 180 100% 50%;
+    --midnight: 215 100% 8%;
+    --glass-bg: 215 100% 10% / 0.6;
     
     /* Gradients */
-    --gradient-portal: linear-gradient(135deg, hsl(var(--portal-primary) / 0.8), hsl(var(--portal-secondary) / 0.6));
-    --gradient-hero: linear-gradient(180deg, hsl(var(--background)), hsl(var(--portal-deep)));
-    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(var(--portal-glow) / 0.15), transparent 70%);
+    --gradient-hero: linear-gradient(135deg, hsl(215 100% 8%), hsl(215 100% 15%));
+    --gradient-card: linear-gradient(135deg, hsl(215 100% 10% / 0.6), hsl(215 100% 15% / 0.3));
+    --gradient-neon: linear-gradient(90deg, hsl(180 100% 50%), hsl(200 100% 60%));
     
     /* Shadows */
-    --shadow-portal: 0 25px 50px -12px hsl(var(--portal-primary) / 0.25);
-    --shadow-glow: 0 0 40px hsl(var(--portal-glow) / 0.3);
-    --shadow-elevation: 0 10px 30px -5px hsl(220 25% 2% / 0.5);
+    --shadow-neon: 0 0 20px hsl(180 100% 50% / 0.5);
+    --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    --shadow-card: 0 10px 30px -10px hsl(0 0% 0% / 0.5);
+    
+    /* Glassmorphism */
+    --glass-border: 1px solid hsl(0 0% 100% / 0.1);
+    --backdrop-blur: blur(10px);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-    /* Animations */
-    --transition-portal: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-glow: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 215 100% 10%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 180 100% 50%;
+    --sidebar-primary-foreground: 215 100% 8%;
+    --sidebar-accent: 215 100% 15%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 215 100% 20%;
+    --sidebar-ring: 180 100% 50%;
   }
 
   .dark {
