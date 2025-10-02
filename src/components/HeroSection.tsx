@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import heroImage from "@/assets/portal-hero.jpg";
 
 interface HeroSectionProps {
   isWelcomeAnimation?: boolean;
@@ -11,57 +10,19 @@ export const HeroSection = ({ isWelcomeAnimation = false }: HeroSectionProps) =>
   const navigate = useNavigate();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background image with overlay */}
-      <div className="absolute inset-0">
-        <img 
-          src={heroImage}
-          alt="Professional tech solutions and digital innovation"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-hero opacity-90" />
-        <div className="absolute inset-0 bg-gradient-glow" />
-      </div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+      {/* Minimal grid pattern overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20" />
       
-      {/* Floating particles effect */}
-      <div className="absolute inset-0">
-        {Array.from({ length: 20 }).map((_, i) => (
-          <div
-            key={i}
-            className={`absolute w-2 h-2 bg-portal-glow rounded-full opacity-0 animate-float ${
-              isWelcomeAnimation ? 'animate-particles-fade' : 'opacity-20'
-            }`}
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: isWelcomeAnimation 
-                ? `${1.5 + Math.random() * 2}s` 
-                : `${Math.random() * 6}s`,
-              animationDuration: `${4 + Math.random() * 4}s`,
-            }}
-          />
-        ))}
-      </div>
+      {/* Subtle glow effect */}
+      <div className="absolute inset-0 bg-gradient-radial from-portal-glow/5 via-transparent to-transparent" />
       
       {/* Content */}
       <div className="relative z-10 text-center max-w-4xl px-6">
-        <div className="space-y-8">
-          {/* Badge */}
-          <div 
-            className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card/20 backdrop-blur-sm border border-primary/20 ${
-              isWelcomeAnimation ? 'opacity-0 animate-slide-left-fade' : ''
-            }`}
-            style={{ animationDelay: '1.2s' }}
-          >
-            <Sparkles className="h-4 w-4 text-portal-glow" />
-            <span className="text-sm font-medium text-foreground/90">
-              Professional Tech Solutions
-            </span>
-          </div>
-          
+        <div className="space-y-12">
           {/* Main heading */}
           <h1 
-            className={`text-6xl md:text-8xl font-bold bg-gradient-to-r from-foreground via-portal-glow to-portal-secondary bg-clip-text text-transparent leading-tight ${
+            className={`text-7xl md:text-9xl font-bold bg-gradient-to-br from-foreground to-foreground/60 bg-clip-text text-transparent leading-tight tracking-tight ${
               isWelcomeAnimation ? 'opacity-0 animate-title-reveal' : ''
             }`}
             style={{ animationDelay: '0.5s' }}
@@ -71,25 +32,25 @@ export const HeroSection = ({ isWelcomeAnimation = false }: HeroSectionProps) =>
           
           {/* Subtitle */}
           <p 
-            className={`text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed ${
+            className={`text-lg md:text-xl text-muted-foreground max-w-md mx-auto font-light ${
               isWelcomeAnimation ? 'opacity-0 animate-slide-right-fade' : ''
             }`}
-            style={{ animationDelay: '1.4s' }}
+            style={{ animationDelay: '1s' }}
           >
-            Delivering cutting-edge technology solutions that drive business growth and digital transformation.
+            Technology solutions for modern businesses
           </p>
           
           {/* CTA Button */}
           <div 
-            className={`pt-4 ${
+            className={`pt-8 ${
               isWelcomeAnimation ? 'opacity-0 animate-bounce-in' : ''
             }`}
-            style={{ animationDelay: '1.8s' }}
+            style={{ animationDelay: '1.5s' }}
           >
             <Button 
               variant="portal"
               size="lg"
-              className="font-semibold px-8 py-4 rounded-2xl text-lg transition-all duration-300 hover:scale-105 group shadow-portal"
+              className="font-medium px-10 py-6 rounded-xl text-base transition-all duration-300 hover:scale-105 group"
               onClick={() => navigate('/home')}
             >
               Start Your Project
@@ -98,9 +59,6 @@ export const HeroSection = ({ isWelcomeAnimation = false }: HeroSectionProps) =>
           </div>
         </div>
       </div>
-      
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 };
