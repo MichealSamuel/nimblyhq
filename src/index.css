@@ -111,20 +111,3 @@ All colors MUST be HSL.
   }
 }
 
-/* Virusia AI Chatbot Styles - Ensure visibility and proper z-index */
-@layer components {
-  [class*="lyra-bubble"],
-  [class*="lyra-panel"],
-  [id*="lyra"],
-  [class*="virusia"] {
-    display: block !important;
-    z-index: 9999 !important;
-    position: fixed !important;
-  }
-
-  [class*="lyra-panel"] {
-    background: hsl(var(--card)) !important;
-    border: 1px solid hsl(var(--border)) !important;
-    box-shadow: var(--shadow-glass) !important;
-  }
-}
