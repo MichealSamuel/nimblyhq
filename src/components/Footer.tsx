@@ -126,9 +126,18 @@ export const Footer = () => {
             <p className="text-sm text-muted-foreground">
               © {currentYear} Nimbly. All rights reserved.
             </p>
-            <p className="text-sm text-muted-foreground">
-              Built with ❤️ for businesses that want to grow
-            </p>
+            <div className="flex items-center gap-2">
+              <p className="text-sm text-muted-foreground">
+                Crafted with precision & innovation
+              </p>
+              <span className="text-muted-foreground">·</span>
+              <span className="relative group">
+                <span className="text-sm font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-pulse-glow">
+                  Rexy
+                </span>
+                <span className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-accent/20 rounded blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </span>
+            </div>
           </div>
         </div>
       </div>
