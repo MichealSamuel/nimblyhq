@@ -111,19 +111,40 @@ All colors MUST be HSL.
   }
 }
 
-/* Virusia Chatbot Widget - Minimal required styles */
-#lyra-bubble,
-#lyra-panel,
-[id^="lyra"] {
+/* Virusia AI Chatbot Widget - Force visibility and proper styling */
+[id*="virusia"],
+[class*="virusia"],
+[id*="lyra"],
+[class*="lyra"] {
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
+  z-index: 999999 !important;
 }
 
-#lyra-panel input,
-#lyra-panel textarea {
-  background: white !important;
-  color: black !important;
-  border: 1px solid #ccc !important;
+/* Ensure input fields are visible */
+[id*="virusia"] input,
+[id*="virusia"] textarea,
+[id*="lyra"] input,
+[id*="lyra"] textarea,
+[class*="virusia"] input,
+[class*="virusia"] textarea,
+[class*="lyra"] input,
+[class*="lyra"] textarea {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #cccccc !important;
+  padding: 8px !important;
+  font-size: 14px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Ensure chat messages are visible */
+[id*="virusia"] *,
+[id*="lyra"] *,
+[class*="virusia"] *,
+[class*="lyra"] * {
+  visibility: visible !important;
 }
 
