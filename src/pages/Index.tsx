@@ -5,7 +5,6 @@ import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { CTABanner } from "@/components/CTABanner";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
-import { ChatbotWidget } from "@/components/ChatbotWidget";
 
 const Index = () => {
   return (
@@ -17,7 +16,6 @@ const Index = () => {
       <CTABanner />
       <ContactSection />
       <Footer />
-      <ChatbotWidget />
     </div>
   );
 };
