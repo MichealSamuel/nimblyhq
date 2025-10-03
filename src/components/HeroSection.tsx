@@ -1,13 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageCircle } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 interface HeroSectionProps {
   isWelcomeAnimation?: boolean;
 }
 
 export const HeroSection = ({ isWelcomeAnimation = false }: HeroSectionProps) => {
-  const navigate = useNavigate();
+  // Safe navigation that works outside Router context
+  let navigate;
+  try {
+    navigate = useNavigate();
+  } catch {
+    navigate = () => window.location.href = '/home';
+  }
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
